@@ -13,16 +13,22 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Entre com seu nome"
         android:id="@+id/textView" />
+    
+    <EditText
+        android:id="@+id/textUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Activity"
+        android:text="Entrar"
         android:id="@+id/button"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/textUsername"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

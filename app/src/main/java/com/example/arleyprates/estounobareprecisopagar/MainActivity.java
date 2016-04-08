@@ -12,8 +12,11 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.KeyEvent;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    int request_Code = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Button btn = (Button) findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startActivity(new Intent("com.example.arleyprates.estounobareprecisopagar.ACTIVITY2"));
+                //startActivity(new Intent("com.example.arleyprates.estounobareprecisopagar.ACTIVITY2"));
+                startActivityForResult(new Intent(" com.example.arleyprates.estounobareprecisopagar.ACTIVITY2"), request_Code);
             }
         });
 
@@ -46,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent("com.example.arleyprates.estounobareprecisopagar.ACTIVITY2"));
         }
         return false;
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == request_Code) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, data.getData().toString(), Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     @Override

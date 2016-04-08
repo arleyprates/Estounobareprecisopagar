@@ -19,7 +19,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity2"
-            android:label="Activity2">
+            android:label="Activity 2">
+            <intent-filter>
+                <action android:name="com.example.arleyprates.estounobareprecisopagar.ACTIVITY2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity3"
+                    android:label="Activity 3">
             <intent-filter>
                 <action android:name="com.example.arleyprates.estounobareprecisopagar.ACTIVITY2" />
                 <category android:name="android.intent.category.DEFAULT" />
