@@ -20,8 +20,16 @@ public class Activity2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
 
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener(){
+        String defaultName = "";
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            defaultName = extras.getString("Name");
+        }
+        EditText text_username = (EditText) findViewById(R.id.textUsername);
+        text_username.setHint(defaultName);
+
+        Button button = (Button) findViewById(R.id.botao);
+        button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
 

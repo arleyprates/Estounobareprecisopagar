@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.KeyEvent;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,11 +25,17 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        Button btn = (Button) findViewById(R.id.button);
+        Button btn = (Button) findViewById(R.id.botao);
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 //startActivity(new Intent("com.example.arleyprates.estounobareprecisopagar.ACTIVITY2"));
-                startActivityForResult(new Intent(" com.example.arleyprates.estounobareprecisopagar.ACTIVITY2"), request_Code);
+               //startActivityForResult(new Intent("com.example.arleyprates.estounobareprecisopagar.ACTIVITY2"), request_Code);
+                Intent i = new Intent("com.example.arleyprates.estounobareprecisopagar.ACTIVITY2");
+                Bundle extras = new Bundle();
+                EditText textUsername = (EditText) findViewById(R.id.textUsername);
+                extras.putString("Name", textUsername.getText().toString());
+                i.putExtras(extras);
+                startActivityForResult(i, 1);
             }
         });
 
